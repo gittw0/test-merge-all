@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="update-catalog" path="/update-catalog" id="5801a59e-bdd1-40f0-8049-9656d83e245f" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5801a59e-bdd1-40f0-8049-9656d83e245ffileName">update-catalog</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="f89d7a5a-b74d-46c6-a041-c1b1aa748e33" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>sessionid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>catalogid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>catalogstatus</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:upd="http://localhost/update-catalog">upd:Response</con:element>
+    </con:representation>
+    <con:request name="update-catalog" id="2f22df6d-495d-49c4-a7ed-640fea780eaa" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://localhost:8096</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>sessionid</con:entry>
+        <con:entry>catalogid</con:entry>
+        <con:entry>catalogstatus</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

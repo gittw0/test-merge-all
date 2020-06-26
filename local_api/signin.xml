@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="signin" path="/signin" id="955f2073-55a6-4185-b2be-cd4ef7c8a02d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="955f2073-55a6-4185-b2be-cd4ef7c8a02dfileName">signin</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="signin" id="91af75e7-2c50-4773-afa4-fa3100410513" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>username</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>password</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>0</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:sig="http://localhost/signin">sig:Response</con:element>
+    </con:representation>
+    <con:request name="signin" id="4833e9e7-ef81-4467-9edd-85083805dcdb" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        <con:setting id="RecordRequestRepresentations">true</con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8096</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>username</con:entry>
+        <con:entry>password</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

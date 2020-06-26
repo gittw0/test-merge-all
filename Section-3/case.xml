@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="25ab1c5d-a0a3-4d3c-ae0c-007f53423190" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="25ab1c5d-a0a3-4d3c-ae0c-007f53423190fileName">case</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="properties" name="Properties" id="a598fc43-2d8d-4992-8969-7e54039a29b4">
+    <con:settings/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:properties>
+        <con:property>
+          <con:name>itemid</con:name>
+          <con:value>1</con:value>
+        </con:property>
+        <con:property>
+          <con:name>price</con:name>
+          <con:value>100</con:value>
+        </con:property>
+        <con:property>
+          <con:name>number</con:name>
+          <con:value>1000-001</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="search-item" id="c79f2783-125e-4c50-8d74-44dcf406be18">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/search-item" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="search-item" id="c41ada4c-8cc3-4c73-b679-21721bf96243" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/search-item</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7f5181cc-2ce4-4fe9-8ba1-8eb9ee6923e9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ecc82af6-96fc-4f97-ace0-1b700c287b47" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="itemid" value="${Properties#itemid}"/>
+          <con:entry key="catalogid" value="${#[Section-1#case-1#get-catalog]#catalogid}"/>
+          <con:entry key="sessionid" value="${#[Launcher#launcher#signout]#sessionid}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+          <con:entry>catalogid</con:entry>
+          <con:entry>itemid</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="add-item-to-cart" id="70f19d0e-1b84-4818-b8e1-a5d02ab369d5">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/add-item-to-cart" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="add-item-to-cart" id="df6cadee-b7ed-4a0e-989a-453e45e6a8f1" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/add-item-to-cart</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e81263d7-52ed-4dd2-989e-195022eddeb7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="10c4112c-6dc1-42f9-9e96-35559b1fc5c1" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="itemid" value="${search-item#itemid}"/>
+          <con:entry key="catalogid" value="${search-item#catalogid}"/>
+          <con:entry key="quantity" value="${add-item-to-cart#quantity}"/>
+          <con:entry key="sessionid" value="${#[Launcher#launcher#signout]#sessionid}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+          <con:entry>catalogid</con:entry>
+          <con:entry>itemid</con:entry>
+          <con:entry>quantity</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="update-cart" id="e740747d-2bc1-4d4c-8348-f360f843ddb6">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/update-cart" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="update-cart" id="346adb79-f74c-4df5-accd-29b42647d7f7" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/update-cart</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="fc20368c-a924-472d-9530-30aec3833e9c" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="807569c5-0341-4022-b590-7aa127c21f4b" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="quantity" value="${add-item-to-cart#quantity}"/>
+          <con:entry key="cardstatus" value="${add-item-to-cart#Response#$['result']['item']['cart-status']}"/>
+          <con:entry key="price" value="${Properties#price}"/>
+          <con:entry key="sessionid" value="${#[Launcher#launcher#signout]#sessionid}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+          <con:entry>cardstatus</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="submit-order" id="0890ed45-44da-4dd1-97ae-110538874daf">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/submit-order" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="submit-order" id="ffac6687-becc-472f-a94c-1e3e5a2781ff" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/submit-order</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="17ae4e67-c7f9-4395-b7ba-1b08708a0570" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c624c5da-32b6-43ae-8254-a6f38a10f660" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="number" value="${Properties#number}"/>
+          <con:entry key="quantity" value="${add-item-to-cart#Response#$['result']['item']['quantity']}"/>
+          <con:entry key="price" value="${Properties#price}"/>
+          <con:entry key="cartstatus" value="${update-cart#Response#$['result']['cart-status']}"/>
+          <con:entry key="sessionid" value="${#[Launcher#launcher#signout]#sessionid}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+          <con:entry>cartstatus</con:entry>
+          <con:entry>price</con:entry>
+          <con:entry>quantity</con:entry>
+          <con:entry>summ</con:entry>
+          <con:entry>number</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="checkout" id="749c1062-be38-4f10-bae2-44591abfecf9">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/checkout" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="checkout" id="7c8b4ca3-c2c4-4a5c-8b34-c1a9cf79c97c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/checkout</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="8643af7a-80f9-4198-a063-e3c3c26f8b3e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="07fa2465-43ae-4aa9-bfe6-6857449b0ec7" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="number" value="${Properties#number}"/>
+          <con:entry key="orderstatus" value="${submit-order#Response#$['result']['order-status']}"/>
+          <con:entry key="summ" value=""/>
+          <con:entry key="sessionid" value="${#[Launcher#launcher#signout]#sessionid}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+          <con:entry>orderstatus</con:entry>
+          <con:entry>summ</con:entry>
+          <con:entry>number</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="Run database request" id="a8f92223-4ad7-4a5e-948d-0afcfbc4b595">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>392f349f-ed77-4664-9fa8-358aaa2d2be8</con:targetTestCase>
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>SINGLETON_AND_WAIT</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>c79f2783-125e-4c50-8d74-44dcf406be18</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>a598fc43-2d8d-4992-8969-7e54039a29b4</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

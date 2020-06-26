@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="d90b24e5-b423-4852-90d0-0192c83e730c" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="case-3" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d90b24e5-b423-4852-90d0-0192c83e730cfileName">case-3</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="get-catalog" id="4d723e5e-eceb-4390-a568-39da5ea6f2ab">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/get-catalog" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="get-catalog" id="56f48b69-9387-4df3-9a2d-005c8d52434d" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/get-catalog</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f85795b2-c784-4e33-bbe9-b6edad9abc2b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ca32f00b-dcb1-4ebc-a819-6b1c371404c4" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="catalogid" value="${#[Section-1#case-3#get-catalog]#catalogid}"/>
+          <con:entry key="sessionid" value="${#[Launcher#launcher#signout]#sessionid}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+          <con:entry>catalogid</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="remove-item3-from-catalog" id="7cca27a2-954a-4cec-97ff-0554ddd1b318">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/remove-item3-from-catalog" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="remove-item3-from-catalog" id="acb11b5a-dd8d-4a6c-886f-88c8a498b35a" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/remove-item3-from-catalog</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="c283d930-c3d0-4377-85a1-875321d59ac6" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ed3dee6d-4668-4ae3-b490-4b4779cec909" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="itemid" value="${#[Section-1#case-3#add-item3-to-catalog]#itemid}"/>
+          <con:entry key="catalogid" value="${get-catalog#catalogid}"/>
+          <con:entry key="sessionid" value="${#[Launcher#launcher#signout]#sessionid}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+          <con:entry>catalogid</con:entry>
+          <con:entry>itemid</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="update-catalog" id="9cfe7d90-32e9-4089-aa41-cc3fe358eb48">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/update-catalog" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="update-catalog" id="2f22df6d-495d-49c4-a7ed-640fea780eaa" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/update-catalog</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="c446c8fe-c2de-4029-a1ef-afef7f0ee6b9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1ed08c67-9d99-4433-95c8-4ac43e4fbaaf" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="catalogid" value="${get-catalog#catalogid}"/>
+          <con:entry key="sessionid" value="${#[Launcher#launcher#signout]#sessionid}"/>
+          <con:entry key="catalogstatus" value="active"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+          <con:entry>catalogid</con:entry>
+          <con:entry>catalogstatus</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="Run Section3 TestCase" id="7c03bcce-176b-4c14-b59b-72eeac501f20">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>25ab1c5d-a0a3-4d3c-ae0c-007f53423190</con:targetTestCase>
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>SINGLETON_AND_WAIT</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>7c03bcce-176b-4c14-b59b-72eeac501f20</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

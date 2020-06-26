@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="validate-catalog" path="/validate-catalog" id="9ecb6d28-f91b-438b-b0f3-5d736886292b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9ecb6d28-f91b-438b-b0f3-5d736886292bfileName">validate-catalog</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="b3e06372-3eae-417e-ab2d-6e912838b54a" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>sessionid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>catalogid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>catalogstatus</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:val="http://localhost/validate-catalog">val:Response</con:element>
+    </con:representation>
+    <con:request name="validate-catalog" id="2eca78a4-cef6-410a-9480-04f26e8a01c7" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8096</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>sessionid</con:entry>
+        <con:entry>catalogid</con:entry>
+        <con:entry>catalogstatus</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/remove-item3-from-catalog" method="POST" resourcePath="/remove-item3-from-catalog" id="7a7f9d44-726c-43e3-a2bb-3513f7e84792" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7a7f9d44-726c-43e3-a2bb-3513f7e84792fileName">%2Fremove-item3-from-catalog</con:setting>
+  </con:settings>
+  <con:defaultResponse>Success</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="Success" id="09b289d6-1774-431b-9f18-f79327f843c2" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": {
+      "id": "3",
+      "status": "removed"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Unknown Response" id="39665afc-9339-4197-81d1-ab8bff3f6295" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="Fail" id="69b56602-6d14-450b-b1c3-20bee82fa7f6" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Fail to remove item 3 from the catalog"}</con:responseContent>
+  </con:response>
+</con:restMockAction>

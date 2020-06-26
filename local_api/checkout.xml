@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="checkout" path="/checkout" id="a3252930-19a5-4ede-860c-0b5394aaf23d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a3252930-19a5-4ede-860c-0b5394aaf23dfileName">checkout</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="700979cb-e490-4df0-b2e7-ffec3169a2be" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>sessionid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>orderstatus</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>summ</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>number</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:chec="http://localhost/checkout">chec:Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="checkout" id="7c8b4ca3-c2c4-4a5c-8b34-c1a9cf79c97c" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://localhost:8096</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>sessionid</con:entry>
+        <con:entry>orderstatus</con:entry>
+        <con:entry>summ</con:entry>
+        <con:entry>number</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

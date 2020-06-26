@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/update-cart" method="GET" resourcePath="/update-cart" id="021ce798-8950-47b2-9dac-3ad9d467ae19" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="021ce798-8950-47b2-9dac-3ad9d467ae19fileName">%2Fupdate-cart</con:setting>
+  </con:settings>
+  <con:defaultResponse>Successfully updated</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="Successfully updated" id="bb7464a3-6196-48d6-889f-1edd63ca93aa" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+	 "cart-status": "ready for validation"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Unknown Response" id="774fdaf1-088a-497d-b1cb-95032d045a35" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="Fail to update" id="5db2b71a-af97-42cd-8363-f4cdc6aa97b5" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Failed to update the cart"}</con:responseContent>
+  </con:response>
+</con:restMockAction>

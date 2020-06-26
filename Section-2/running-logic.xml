@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f15af81d-c671-4fb3-82cb-4e5f4df678fd" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="running-logic" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f15af81d-c671-4fb3-82cb-4e5f4df678fdfileName">running-logic</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="setup" id="937b7909-3097-4428-b2be-44507a10e07a">
+    <con:settings/>
+    <con:config>
+      <script>int randomNumber = 0;
+int flowValue = 0;
+	
+// Random number generator between 1 to 100
+def private static int getRandomNumber() {
+	return Math.abs(new Random().nextInt() % 100) + 1;
+}
+
+// flow determining logic
+randomNumber = getRandomNumber();
+if(randomNumber &lt; 33) {
+	testRunner.runTestStep( testRunner.testCase.testSuite.project.testSuites['Section-2'].testCases['running-logic'].testSteps['Run case-1'] )		
+} else if (randomNumber >= 33 &amp;&amp; randomNumber &lt; 66) {
+	testRunner.runTestStep( testRunner.testCase.testSuite.project.testSuites['Section-2'].testCases['running-logic'].testSteps['Run case-2'] )
+} else {
+	testRunner.runTestStep( testRunner.testCase.testSuite.project.testSuites['Section-2'].testCases['running-logic'].testSteps['Run case-3'] )
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="Run case-1" id="b08cda90-be65-41a8-8334-ec950895fdd5">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>eb90a651-aea7-4ecc-af2b-1f80e967b50e</con:targetTestCase>
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>SINGLETON_AND_WAIT</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="Run case-2" id="e6e502bd-274e-43cc-9a06-f46fe2b63b11">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>32637263-a0ee-47d5-bd97-bd2adf7cec5d</con:targetTestCase>
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>SINGLETON_AND_WAIT</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="Run case-3" id="2b1154ea-2816-4010-bff7-ff15b881d2c5">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>d90b24e5-b423-4852-90d0-0192c83e730c</con:targetTestCase>
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>SINGLETON_AND_WAIT</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>937b7909-3097-4428-b2be-44507a10e07a</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

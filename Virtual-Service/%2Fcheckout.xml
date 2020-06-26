@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/checkout" method="POST" resourcePath="/checkout" id="6aca553a-66de-408e-a34d-fb4ac2e43765" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6aca553a-66de-408e-a34d-fb4ac2e43765fileName">%2Fcheckout</con:setting>
+  </con:settings>
+  <con:defaultResponse>Successfull Checkout</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="Successfull Checkout" id="c25e2acd-87ab-4bd6-895f-2bc2fcf312e1" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "purchasestatus": {
+    "card-status": "validated",
+    "id": "${itemid}",
+    "stockStatus": "1 unit",
+    "expectedDelivery": ""
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Unknown Response" id="9e24b45b-4081-423c-80a8-d98e402e8644" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="Checkout Fail" id="32553aba-ec59-4392-94af-4609dfc6c403" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Checkout failed"}</con:responseContent>
+  </con:response>
+</con:restMockAction>

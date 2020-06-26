@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="remove-item3-from-catalog" path="/remove-item3-from-catalog" id="135f162e-ce5d-4606-9749-fd1ce1e16bfa" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="135f162e-ce5d-4606-9749-fd1ce1e16bfafileName">remove-item3-from-catalog</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="e9c36604-6527-4574-83d8-3dff7c180fde" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>sessionid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>catalogid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>itemid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="remove-item3-from-catalog" id="acb11b5a-dd8d-4a6c-886f-88c8a498b35a" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://localhost:8096</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="itemid" value="3"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>sessionid</con:entry>
+        <con:entry>catalogid</con:entry>
+        <con:entry>itemid</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

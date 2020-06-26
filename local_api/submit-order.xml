@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="submit-order" path="/submit-order" id="a3a464a6-8fd1-4a01-9644-d70cb32d38de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a3a464a6-8fd1-4a01-9644-d70cb32d38defileName">submit-order</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="d3e6b2b5-7b9a-4c76-a1b4-bcbf691f03dd" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>sessionid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>cartstatus</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>price</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>quantity</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>summ</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>number</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:sub="http://localhost/submit-order">sub:Response</con:element>
+    </con:representation>
+    <con:request name="submit-order" id="ffac6687-becc-472f-a94c-1e3e5a2781ff" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://localhost:8096</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>sessionid</con:entry>
+        <con:entry>cartstatus</con:entry>
+        <con:entry>price</con:entry>
+        <con:entry>quantity</con:entry>
+        <con:entry>summ</con:entry>
+        <con:entry>number</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

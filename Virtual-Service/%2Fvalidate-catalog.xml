@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/validate-catalog" method="GET" resourcePath="/validate-catalog" id="7b460960-83cd-48c1-8356-c9d157c38d74" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7b460960-83cd-48c1-8356-c9d157c38d74fileName">%2Fvalidate-catalog</con:setting>
+  </con:settings>
+  <con:defaultResponse>Successfully Validated</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="Successfully Validated" id="672e1bce-ff12-4106-86c6-7eeb42d20cfd" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "catalog": {
+      "id": "1",
+      "description": "The New Item Catalog",
+      "status": "validated"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Unknown Response" id="d26cb031-82ff-4210-b4d0-42480f5fabb2" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="Fail to validate" id="b5880bb4-8371-4135-898a-03e89b7c0f97" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Fail to validate the catalog"}</con:responseContent>
+  </con:response>
+</con:restMockAction>

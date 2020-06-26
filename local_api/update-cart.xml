@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="update-cart" path="/update-cart" id="e3365f49-10b1-4ec0-b1d5-0e62d457fcd6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e3365f49-10b1-4ec0-b1d5-0e62d457fcd6fileName">update-cart</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="d7824b6c-c5e8-4404-95d6-0988eeb79ec4" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>sessionid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>cardstatus</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>price</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>quantity</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:upd="http://localhost/update-cart">upd:Response</con:element>
+    </con:representation>
+    <con:request name="update-cart" id="346adb79-f74c-4df5-accd-29b42647d7f7" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8096</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="sessionid" value=""/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>sessionid</con:entry>
+        <con:entry>cardstatus</con:entry>
+        <con:entry>price</con:entry>
+        <con:entry>quantity</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

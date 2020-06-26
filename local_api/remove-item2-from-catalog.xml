@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="remove-item2-from-catalog" path="/remove-item2-from-catalog" id="343b3b13-c3d6-4d50-8423-9bdb9d51a37b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="343b3b13-c3d6-4d50-8423-9bdb9d51a37bfileName">remove-item2-from-catalog</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="757e1a6a-1d26-4463-98a6-0b9342ad5b66" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>sessionid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>catalogid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>itemid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:rem="http://localhost/remove-item2-from-catalog">rem:Response</con:element>
+    </con:representation>
+    <con:request name="remove-item2-from-catalog" id="a222ce6c-c940-4ab6-986f-9a008863cbaa" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://localhost:8096</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="itemid" value="2"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>sessionid</con:entry>
+        <con:entry>catalogid</con:entry>
+        <con:entry>itemid</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

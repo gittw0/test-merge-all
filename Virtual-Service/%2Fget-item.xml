@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/get-item" method="GET" resourcePath="/get-item" id="c8fe8666-fb66-46fc-a84f-449e626e2afc" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c8fe8666-fb66-46fc-a84f-449e626e2afcfileName">%2Fget-item</con:setting>
+  </con:settings>
+  <con:defaultResponse>Success</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="Success" id="788a79f6-29f2-4b9a-9a40-1c8d980ded34" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": {
+      "id": "${itemId}",
+      "status": "active"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Unknown Response" id="b2fd47b7-dc6f-44a3-8f45-ef9b672b95d9" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="Fail" id="a8a85f69-6acd-45bc-b6d4-4d37eb6cef22" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Fail to get the item"}</con:responseContent>
+  </con:response>
+</con:restMockAction>

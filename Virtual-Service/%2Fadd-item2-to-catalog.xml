@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/add-item2-to-catalog" method="POST" resourcePath="/add-item2-to-catalog" id="0af3842a-1a92-44f5-b522-f319aa5bbd6b" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0af3842a-1a92-44f5-b522-f319aa5bbd6bfileName">%2Fadd-item2-to-catalog</con:setting>
+  </con:settings>
+  <con:defaultResponse>Success</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="Success" id="c7a7c130-d4d9-49c9-be23-b6b826572e21" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": {
+      "id": "2",
+      "status": "added"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Unknown Response" id="6bd40481-2852-4cab-a50e-8ce8adfe089c" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="Fail" id="023780fe-0fba-45b6-b615-12a9acf24b29" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Fail to add item 2 to the catalog"}</con:responseContent>
+  </con:response>
+</con:restMockAction>

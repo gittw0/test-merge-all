@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/signin" method="GET" resourcePath="/signin" id="51ec256d-58ba-478a-9699-fc082bfddb35" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="51ec256d-58ba-478a-9699-fc082bfddb35fileName">%2Fsignin</con:setting>
+  </con:settings>
+  <con:defaultResponse>Successfully Signed In</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>def queryString = mockRequest.getRequest().getQueryString()
+
+String[] fields = queryString.split("&amp;");
+String[] kv;
+
+HashMap&lt;String, String> params = new HashMap&lt;String, String>()
+for (int i = 0; i &lt; fields.length; ++i){
+    kv = fields[i].split("=");
+    if (2 == kv.length)
+     params.put(kv[0], kv[1]); 
+}
+
+def username = params.get("username")
+def password = params.get("password")
+def sum = username + password
+
+// seems ok
+def sessionid = String.valueOf( Math.random() ).substring( 2 )
+
+context.setProperty( sum, sessionid )
+context.setProperty( sessionid, sum )
+
+requestContext.sessionid = sessionid
+return "Successfully Singen In"</con:dispatchPath>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="Successfully Signed In" id="b9594afb-0513-40cb-9165-1b4d2da60ae7" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "sessionid" : "${sessionid}" }</con:responseContent>
+  </con:response>
+  <con:response name="Invalid Sign In" id="9a9e7c04-f77e-4fbb-a580-63718945c519" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Invalid Sign In" : "The sign in credentials are invalid&lt;/sam:loginFault" }</con:responseContent>
+  </con:response>
+  <con:response name="Already Sined In" id="e301f2b1-5318-490f-8971-23a587440045" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "Already Signed In" : "The specified credentials are already signed in" }</con:responseContent>
+  </con:response>
+</con:restMockAction>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/add-item-to-cart" method="POST" resourcePath="/add-item-to-cart" id="0af0e7be-94c3-4ad3-9e02-087b13cd0bf8" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0af0e7be-94c3-4ad3-9e02-087b13cd0bf8fileName">%2Fadd-item-to-cart</con:setting>
+  </con:settings>
+  <con:defaultResponse>Successfully added</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="Successfully added" id="82b042b4-2df9-432b-9899-951ff588cd67" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": {
+      "id": "${itemId}",
+      "description": "${item1description}",
+      "quantity": "1",
+      "cart-status": "non-validated"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Unknown Response" id="055f473f-c22f-47e3-a558-d03cb6580cca" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="Item not found" id="8d425fe3-b7a1-4f3c-8a97-6e0ffc465a7c" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Item not found"}</con:responseContent>
+  </con:response>
+</con:restMockAction>

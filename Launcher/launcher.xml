@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="879d520f-99d7-4068-a17b-8634644edba9" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="launcher" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="879d520f-99d7-4068-a17b-8634644edba9fileName">launcher</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="VirtRunnerTestStep" name="Run Virtual Service" id="3a5734a2-9c93-46de-947f-0c598b3cf10f">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>Virtual Service</server>
+      <action>run</action>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="UserBase" id="90857619-c1fb-4d8a-85b1-87770fcccbd3">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>${projectDir}/../Projects/dataSource.xlsx</file>
+          <worksheet/>
+          <cell>A1</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>id</con:property>
+      <con:property>password</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="signin" id="dd83542e-e7c0-46d9-a913-11afe722e524">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/signin" methodName="signin" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="signin" id="4833e9e7-ef81-4467-9edd-85083805dcdb" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="RecordRequestRepresentations">true</con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/signin</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="956d0595-afba-4156-9fef-3e509a6554cb" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="70a142d9-cc37-4d6b-9a43-4a2467e0961c" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="password" value="${UserBase#password}"/>
+          <con:entry key="username" value="${UserBase#id}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>username</con:entry>
+          <con:entry>password</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="Run Section-1 TestCase" id="28ee3b92-4962-4742-952e-9844d85ff0bd">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>b0d39c8a-a1a5-43d1-bc1d-0fe1f5e27229</con:targetTestCase>
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>SINGLETON_AND_WAIT</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="signout" id="4c2d4b3a-0223-481e-9b33-3942c39bc1e5">
+    <con:settings/>
+    <con:config service="local_api" resourcePath="/signout" methodName="signout" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="signout" id="548886e3-c6b4-47c5-af4a-2ed1b5596155" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="RecordRequestRepresentations">true</con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8096</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/signout</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="be19dced-8c42-4ba9-b9a2-baf6893a1f3a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="fc03b7b5-12d0-4322-ab16-8863f85660bd" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="565288d7-1b90-4ed1-a846-f0a4a499aaf9" disabled="true">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>UserBase</dataSourceStep>
+      <targetStep>signin</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="VirtRunnerTestStep" name="Stop Virtual Service" id="2eaf0378-e444-4486-a37b-e07487e1ba76">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>Virtual Service</server>
+      <action>stop</action>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>28ee3b92-4962-4742-952e-9844d85ff0bd</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>dd83542e-e7c0-46d9-a913-11afe722e524</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>4c2d4b3a-0223-481e-9b33-3942c39bc1e5</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>90857619-c1fb-4d8a-85b1-87770fcccbd3</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>565288d7-1b90-4ed1-a846-f0a4a499aaf9</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>
